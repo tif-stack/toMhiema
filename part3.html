@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To Mhiema</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --pink: #ff85b3;
+      --purple: #d434da;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #c797c0, #95c3d3);
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    
+    /* INTRO CARD */
+    #cardIntro {
+      position: absolute;
+      inset: 0;
+      background: #fff0fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      z-index: 1000;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      max-width: 320px;
+      padding: 40px;
+      text-align: center;
+    }
+    #cardIntro {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 720px;
+  padding: 30px 40px;
+  gap: 20px;
+}
+
+.intro-left {
+  flex: 1;
+}
+
+.intro-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: 220px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+   #cardIntro h1 {
+  color: #ff6699;
+  margin: 0;
+  font-size: 2.2em;
+  animation: softGlow 2.5s infinite alternate;
+}
+
+    
+
+    #cardIntro p {
+      margin: 0;
+      font-size: 1.1em;
+      color: #aa3d6a;
+    }
+
+    #cardIntro button {
+      padding: 12px 28px;
+      font-size: 1em;
+      background-color: #ff6699;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease;
+    }
+
+    #cardIntro button:hover {
+      background-color: #ff3366;
+    }
+
+    /* QUIZ SECTION */
+    #intro {
+      position: absolute;
+      inset: 0;
+      background: #fff0fa;
+      display: none; /* Start hidden, show after cardIntro */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      transition: opacity 1s ease;
+      z-index: 999;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    #intro h2 {
+      color: var(--purple);
+      font-size: 1.6em;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+
+    #intro input {
+      padding: 10px;
+      font-size: 1em;
+      border: 2px solid var(--pink);
+      border-radius: 8px;
+      text-align: center;
+      max-width: 300px;
+      width: 90%;
+    }
+
+    #intro button {
+      padding: 10px 25px;
+      font-size: 1em;
+      border: none;
+      background: var(--pink);
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    #intro button:hover {
+      background: #f1649d;
+    }
+
+    #message {
+      color: #c91ca3;
+      font-weight: bold;
+      height: 24px;
+      min-height: 24px;
+    }
+
+    .surprise {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      max-width: 280px;
+      margin: 10px 0;
+    }
+
+    .surprise img {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    #nextBtn {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #b250b2;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #nextBtn:hover {
+      background-color: #982498;
+    }
+
+    /* MAIN BIRTHDAY PAGE */
+    #main {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    h1 {
+      color: #ca30cf;
+      font-size: 2.3em;
+      margin: 25px 10px 5px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 20px #ff6bd6; }
+    }
+
+    @keyframes softGlow {
+  from {
+    text-shadow: 0 0 10px #ffb6d9;
+  }
+  to {
+    text-shadow: 0 0 20px #ff66cc, 0 0 30px #ff66cc;
+  }
+}
+
+
+    #quoteBox {
+      color: #380a32;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      max-width: 400px;
+    }
+
+  
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Intro Card -->
+  <!--<div id="cardIntro">
+    <img src="ChatGPT Image Jul 3, 2025, 05_01_59 PM.png" alt="Avatar" class="avatar">
+    <h1>Hi Baby</h1>
+        <p style="font-size: 1.15em; line-height: 1.6;">
+            I made something just for you a little surprise straight from my heart.<br>
+            But first, a tiny quiz... just to make sure it’s really my one and only reading this. 
+        </p>
+<button id="startBtn">Unlock Your Surprise 💜</button>
+  </div>-->
+
+<div id="cardIntro">
+  <div class="intro-left">
+    <h1>Hi Baby </h1>
+    <p style="font-size: 1.15em; line-height: 1.6;">
+      I made something just for you just a little surprise straight from my heart. <br>
+      But first, a tiny quiz... just to make sure it’s really my one and only reading this. <br>
+    </p>
+    <button id="startBtn">Unlock Your Surprise 💜</button>
+  </div>
+  <div class="intro-right">
+    <img src="ChatGPT Image Jul 3, 2025, 05_01_59 PM.png" alt="Avatar" class="avatar">
+  </div>
+</div>
+
+
+
+
+  <!-- Quiz Section -->
+  <div id="intro">
+    <h2 id="questionText">Who is your wife?</h2>
+    <input type="text" id="answer" placeholder="Type your answer…">
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="message"></div>
+
+    <!-- Surprise images and messages -->
+    <div id="surprise0" class="surprise">
+      <img src="ey.jfif" alt="nickname"> <!-- 🖼️ Insert your first surprise image -->
+      <p style="color:var(--purple);font-weight:bold;">YES I AM YOUR ONE AND ONLY QUEEN!!!👑</p>
+    </div>
+
+    <div id="surprise1" class="surprise">
+      <img src="s.jfif" alt="color"> <!-- 🖼️ Insert your second surprise image -->
+      <p style="color:var(--purple);font-weight:bold;">You’ll always be my baby💜</p>
+    </div>
+
+    <div id="surprise2" class="surprise">
+      <img src="country.jfif" alt="dream"> <!-- 🖼️ Insert your third surprise image -->
+      <p style="color:var(--purple);font-weight:bold;">Our dream destination awaits! ✈️🌍</p>
+    </div>
+
+    <button id="nextBtn" onclick="nextQuestion()">Next</button>
+  </div>
+
+  <!-- Main Birthday Page -->
+  <div id="main">
+    <h1><i>HAPPY BIRTHDAY TO MY ONE AND ONLY BABY</i></h1>
+    <div id="quoteBox"><i>Happy Birthday Baby</i></div>
+
+    <!-- Floating Hearts -->
+    <div class="heart" style="left: 5%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 25%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 45%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 65%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 85%; animation-delay: 4s;"></div>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+  // Start button handler: hide cardIntro, show quiz
+  document.getElementById('startBtn').addEventListener('click', () => {
+  document.getElementById('cardIntro').style.display = 'none';
+  document.getElementById('intro').style.display = 'flex';
+
+  // ✅ Try to play music now
+  const music = document.getElementById('bgMusic');
+  music.play().catch(err => {
+    console.log("Autoplay blocked:", err);
+  });
+});
+
+
+  const stages = [
+    {
+      question: "Who is your wife?",
+      answer: "tfanny esmeralda",
+      surpriseId: "surprise0"
+    },
+    {
+      question: "What’s my nickname for you?",
+      answer: "baby",
+      surpriseId: "surprise1"
+    },
+    {
+      question: "What’s my dream country with you?",
+      answer: "canada",
+      surpriseId: "surprise2"
+    }
+  ];
+
+  let currentStage = 0;
+  const questionText = document.getElementById("questionText");
+  const input = document.getElementById("answer");
+  const message = document.getElementById("message");
+  const nextBtn = document.getElementById("nextBtn");
+
+  function checkAnswer() {
+    const guess = input.value.trim().toLowerCase();
+    const stage = stages[currentStage];
+
+    if (guess === stage.answer) {
+      message.textContent = "";
+      input.disabled = true;
+
+      // Show surprise image/message
+      if (stage.surpriseId) {
+        document.getElementById(stage.surpriseId).style.display = "flex";
+      }
+
+      nextBtn.style.display = "inline-block";
+    } else {
+      message.textContent = "Hindi ikaw si Baby 😠";
+    }
+  }
+
+  function nextQuestion() {
+    // Hide current surprise
+    if (stages[currentStage].surpriseId) {
+      document.getElementById(stages[currentStage].surpriseId).style.display = "none";
+    }
+
+    currentStage++;
+    input.value = "";
+    input.disabled = false;
+    message.textContent = "";
+    nextBtn.style.display = "none";
+
+    if (currentStage < stages.length) {
+      questionText.textContent = stages[currentStage].question;
+    } else {
+      // Quiz done - hide intro, show main
+      document.getElementById("intro").style.opacity = "0";
+      setTimeout(() => {
+        document.getElementById("intro").style.display = "none";
+        document.getElementById("main").style.display = "flex";
+      }, 800);
+    }
+  }
+
+  // Quote rotator on main page
+  const quotes = [
+    "Happy birthday to the one who always loves me ",
+    "You're the reason this day is so special ",
+    "Thank you for being my number one fan ",
+    "for always understanding me",
+    "and always reminding me",
+    "that you're always with me",
+    "Sorry if I sometimes get mad at you ",
+    "especially when you play games instead of having time on me",
+    "I pray for your success in life ",
+    "I will always be proud of you too",
+    "I LOVE YOU SO MUCH 💋💋💋",
+    "Happy birthday"
+  ];
+  let quoteIndex = 0;
+  setInterval(() => {
+    if (document.getElementById("main").style.display === "flex") {
+      document.getElementById("quoteBox").textContent = quotes[quoteIndex];
+      quoteIndex = (quoteIndex + 1) % quotes.length;
+    }
+  }, 4000);
+  
+</script>
+
+
+</body>
+</html>
